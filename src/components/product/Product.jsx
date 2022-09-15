@@ -10,7 +10,9 @@ function Product() {
           <small>R</small>
           <strong>20.00</strong>
         </p>
-        <button>Add to cart</button>
+        <p className="product__rating">⭐</p>
+        <img src="https://m.media-amazon.com/images/I/41Ll5WiYZVL.jpg" alt="" className="product__image" />
+        <button className="product__button">Add to Cart</button>
       </div>
     </div>
   )
