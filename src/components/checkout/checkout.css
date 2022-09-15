@@ -1,0 +1,57 @@
+p, h1, h2, h3, h4, h5, h6{
+  margin: 10px 0px;
+}
+
+.checkout{
+  padding: 10px;
+  display: flex;
+}
+
+.checkout__header{
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 2px solid gray;
+}
+
+.checkout__left{
+  flex: 1;
+  padding: 0px 10px;
+}
+
+.checkout__add{
+ width: 100%;
+}
+
+.checkout__items{
+  display: flex;
+  justify-content: space-between;
+}
+
+.item__image{
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.item__description{
+  font-weight: bold;
+}
+
+.item__button{
+  background-color: #f0c14b;
+  border: 1px #a88734 solid;
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+
+.checkout__right{
+  flex: 1;
+  border: 2px solid rgb(255, 232, 235);
+  border-radius: 4px;
+  padding: 8px 20px 25px;
+  background-color: rgb(255, 246, 247);
+}
+
+.item__buttonCheckout{
+  width: 100%;
+}
