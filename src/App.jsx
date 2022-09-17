@@ -13,7 +13,7 @@ function App() {
 
   return (
 
-    //2:00
+    //2:05
     <BrowserRouter>
       <Routes>
         <Route path='/' element={
