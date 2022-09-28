@@ -25,6 +25,7 @@ p, h1, h2, h3, h4, h5, h6{
 .checkout__items{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .item__image{

@@ -5,6 +5,7 @@ import { useStateValue } from '../StateProvider';
 
 import { FaBasketballBall, FaSearch } from 'react-icons/fa';
 import { MdShoppingBasket } from 'react-icons/md';
+import { Link } from "react-router-dom";
 
 function Header() {
   const [state, dispatch] = useStateValue(reducer, initialState);
@@ -44,7 +45,9 @@ function Header() {
         </div>
 
         <div className="header__optionBasket">
-          <MdShoppingBasket className="header__basketIcon" />
+          <Link to="/checkout">
+            <MdShoppingBasket className="header__basketIcon" />
+          </Link>
           <span className="header__option2 header__basketCount">{state.basket.length}</span>
         </div>
       </div>

@@ -12,7 +12,7 @@ function Product() {
       item: {
         id: "fs",
         image: "hdtewre",
-        price: "price",
+        price: 120,
         rating: "Rating"
       }
     })
