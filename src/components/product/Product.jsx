@@ -6,7 +6,6 @@ import './product.css';
 function Product() {
   const [state, dispatch] = useStateValue(reducer, initialState);
 
-  console.log("\n\nThis is the basket: ", state)
   const addToBasket = () => {
     dispatch({
       type: "ADD_TO_BASKET",

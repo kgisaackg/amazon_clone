@@ -1,10 +1,15 @@
 import React from 'react'
 import './header.css'
+import reducer, { initialState } from '../reducer';
+import { useStateValue } from '../StateProvider';
 
-import { FaSearch } from 'react-icons/fa';
+import { FaBasketballBall, FaSearch } from 'react-icons/fa';
 import { MdShoppingBasket } from 'react-icons/md';
 
 function Header() {
+  const [state, dispatch] = useStateValue(reducer, initialState);
+
+  console.log("header State", state)
   return (
     <div className='header'>
       <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
@@ -40,7 +45,7 @@ function Header() {
 
         <div className="header__optionBasket">
           <MdShoppingBasket className="header__basketIcon" />
-          <span className="header__option2 header__basketCount">0</span>
+          <span className="header__option2 header__basketCount">{state.basket.length}</span>
         </div>
       </div>
     </div>
