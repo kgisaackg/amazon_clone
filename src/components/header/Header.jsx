@@ -23,9 +23,9 @@ function Header() {
           <span className="header__option1">
             Hello Guest
           </span>
-          <span className="header__option2">
+          <Link to="/signin" className="header__option2">
             Sign In
-          </span>
+          </Link>
         </div>
         <div className="header__option">
           <span className="header__option1">
@@ -44,12 +44,10 @@ function Header() {
           </span>
         </div>
 
-        <div className="header__optionBasket">
-          <Link to="/checkout">
-            <MdShoppingBasket className="header__basketIcon" />
-          </Link>
+        <Link to="/checkout" className="header__optionBasket">
+          <MdShoppingBasket className="header__basketIcon" />
           <span className="header__option2 header__basketCount">{state.basket.length}</span>
-        </div>
+        </Link>
       </div>
     </div>
   )

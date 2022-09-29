@@ -8,19 +8,22 @@ import {
   BrowserRouter,
   Routes
 } from "react-router-dom";
+import SignIn from './components/signin/SignIn';
 
 function App() {
 
   return (
 
-    //2:05
+    //4:07
 
     <BrowserRouter>
-      <Header />
+
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/' element={<><Header /><Home /></>} />
+        <Route path='/checkout' element={<><Header /><Checkout /></>} />
         <Route path='/home' element={<Home />} />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='*' element={<h1>Error Page Not Found.</h1>} />
       </Routes>
     </BrowserRouter>
 
