@@ -14,15 +14,16 @@ function App() {
   return (
 
     //2:05
+
     <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path='/' element={
-          [<Header key={1} />, <Home key={2} />]}
-        />
+        <Route path='/' element={<Home />} />
         <Route path='/checkout' element={<Checkout />} />
         <Route path='/home' element={<Home />} />
       </Routes>
     </BrowserRouter>
+
   )
 }
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CheckoutProduct from "../checkout_product/CheckoutProduct";
 import reducer, { initialState } from '../reducer';
 import { useStateValue } from '../StateProvider';
 
@@ -12,7 +13,6 @@ function Checkout() {
 
   useEffect(() => {
     console.log("Hello world", state.basket.length);
-    calculateTotalPrice(state)
   }, [])
 
   const calculateTotalPrice = (state) => {
@@ -22,7 +22,7 @@ function Checkout() {
     });
 
     console.log(total)
-    setTotalPrice(total)
+    return total;
   }
 
   return (
@@ -35,19 +35,12 @@ function Checkout() {
 
         {
           state.basket.map((basket, index) => {
-            return <div key={index} className="checkout__items">
-              <img src="https://m.media-amazon.com/images/I/41Ll5WiYZVL.jpg" alt="" className="item__image" />
-              <div className="item__card">
-                <p className="item__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                <p className="item__rating">⭐</p>
-                <button className="item__button">Add to Cart</button>
-              </div>
-            </div>
+            return <CheckoutProduct />
           })
         }
       </div>
       <div className="checkout__right">
-        <p>Subtotal ({state.basket.length} items): <strong>R {totalPrice}</strong></p>
+        <p>Subtotal ({state.basket.length} items): <strong>R {calculateTotalPrice(state)}</strong></p>
         <p>
           <input type="checkbox" name="" id="" /> This order contains a gift
         </p>
