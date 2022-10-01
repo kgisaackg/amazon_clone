@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CheckoutProduct from "../checkout_product/CheckoutProduct";
 import reducer, { initialState } from '../reducer';
 import { useStateValue } from '../StateProvider';
@@ -10,6 +11,8 @@ function Checkout() {
   const [state, dispatch] = useStateValue(reducer, initialState);
 
   const [totalPrice, setTotalPrice] = useState(0)
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log("Hello world", state.basket.length);
@@ -38,13 +41,15 @@ function Checkout() {
             return <CheckoutProduct />
           })
         }
+
       </div>
       <div className="checkout__right">
         <p>Subtotal ({state.basket.length} items): <strong>R {calculateTotalPrice(state)}</strong></p>
         <p>
           <input type="checkbox" name="" id="" /> This order contains a gift
         </p>
-        <button className="item__button item__buttonCheckout">Proceed to Checkout</button>
+        <button className="item__button item__buttonCheckout"
+        onClick={() => navigate("/payment")}>Proceed to Checkout</button>
       </div>
     </div>
   )
