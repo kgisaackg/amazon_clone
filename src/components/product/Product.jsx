@@ -3,7 +3,7 @@ import reducer, { initialState } from '../reducer';
 import { useStateValue } from '../StateProvider';
 import './product.css';
 
-function Product() {
+function Product({description, price, image}) {
   const [state, dispatch] = useStateValue(reducer, initialState);
 
   const addToBasket = () => {
@@ -21,13 +21,13 @@ function Product() {
   return (
     <div className="product">
       <div className="product__card">
-        <p>Lorem, ipsum dolor.</p>
+        <p>{description}</p>
         <p className="product__price">
           <small>R </small>
-          <strong>120.00</strong>
+          <strong>{price}</strong>
         </p>
         <p className="product__rating">⭐</p>
-        <img src="https://m.media-amazon.com/images/I/41Ll5WiYZVL.jpg" alt="" className="product__image" />
+        <img src={image} alt="" className="product__image" />
         <button onClick={() => addToBasket()} className="product__button">Add to Cart</button>
       </div>
     </div>
