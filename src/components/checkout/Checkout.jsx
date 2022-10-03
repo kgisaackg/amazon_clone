@@ -37,9 +37,9 @@ function Checkout() {
         <p className="checkout__header">Your Shopping Basket</p>
 
         {
-          state.basket.map((basket, index) => {
-            return <CheckoutProduct />
-          })
+          state.basket.map((basket, index) => 
+            <CheckoutProduct key={index} description={basket.description} price={basket.price} image ={basket.image}/>
+          )
         }
 
       </div>

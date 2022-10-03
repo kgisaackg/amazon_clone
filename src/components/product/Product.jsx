@@ -11,9 +11,10 @@ function Product({description, price, image}) {
       type: "ADD_TO_BASKET",
       item: {
         id: "fs",
-        image: "hdtewre",
-        price: 120,
-        rating: "Rating"
+        image: image,
+        price: price,
+        rating: "Rating",
+        description: description
       }
     })
   }
