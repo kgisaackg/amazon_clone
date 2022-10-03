@@ -1,6 +1,5 @@
 .checkout{
   padding: 10px;
-  display: flex;
 }
 
 .checkout__header{
@@ -43,6 +42,7 @@
 
 .checkout__right{
   flex: 1;
+  height: fit-content;
   border: 2px solid rgb(255, 232, 235);
   border-radius: 4px;
   padding: 8px 20px 25px;
@@ -51,4 +51,10 @@
 
 .item__buttonCheckout{
   width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .checkout{
+    display: flex;
+  }
 }

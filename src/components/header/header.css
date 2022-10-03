@@ -1,6 +1,5 @@
 .header{
-  height: 60px;
-  display: flex;
+  height: 130px;
   align-items: center;
   background-color: #131921;
   position: sticky;
@@ -61,6 +60,14 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .header__option2{
   font-weight: 800;
+}
+
+@media only screen and (min-width: 768px) {
+  .header{
+    height: 60px;
+    display: flex;
+  }
 }
