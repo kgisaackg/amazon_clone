@@ -10,21 +10,13 @@ function Checkout() {
 
   const [state, dispatch] = useStateValue(reducer, initialState);
 
-  const [totalPrice, setTotalPrice] = useState(0)
-
   const navigate = useNavigate();
-
-  useEffect(() => {
-    console.log("Hello world", state.basket.length);
-  }, [])
 
   const calculateTotalPrice = (state) => {
     let total = 0
     state.basket.forEach(basketItem => {
       total += basketItem.price;
     });
-
-    console.log(total)
     return total;
   }
 
@@ -37,8 +29,8 @@ function Checkout() {
         <p className="checkout__header">Your Shopping Basket</p>
 
         {
-          state.basket.map((basket, index) => 
-            <CheckoutProduct key={index} description={basket.description} price={basket.price} image ={basket.image}/>
+          state.basket.map((basket, index) =>
+            <CheckoutProduct key={index} description={basket.description} price={basket.price} image={basket.image} />
           )
         }
 
@@ -49,7 +41,7 @@ function Checkout() {
           <input type="checkbox" name="" id="" /> This order contains a gift
         </p>
         <button className="item__button item__buttonCheckout"
-        onClick={() => navigate("/payment")}>Proceed to Checkout</button>
+          onClick={() => navigate("/payment")}>Proceed to Checkout</button>
       </div>
     </div>
   )

@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 function Header() {
   const [state, dispatch] = useStateValue(reducer, initialState);
 
-  console.log("header State", state)
   return (
     <div className='header'>
       <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />

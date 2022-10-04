@@ -12,15 +12,12 @@ const reducer = (state, action) => {
       const index = state.basket.findIndex(
         (basketItem) => basketItem.id === action.item.id
       )
-      if(index >= 0){
-        console.log("Hopefully have removed the item");
+      if (index >= 0) {
         state.basket.splice(index, 1)
       }
-      else  
-        console.log("No items to remove.")
-    return {
-      basket: state.basket
-    }
+      return {
+        basket: state.basket
+      }
 
   }
 }
