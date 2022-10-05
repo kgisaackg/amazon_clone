@@ -11,14 +11,19 @@ import {
 import SignIn from './components/signin/SignIn';
 import Payment from './components/payment/payment';
 
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 function App() {
 
   return (
 
     //4:07
-
+    
     <BrowserRouter>
-
       <Routes>
         <Route path='/' element={<><Header /><Home /></>} />
         <Route path='/checkout' element={<><Header /><Checkout /></>} />

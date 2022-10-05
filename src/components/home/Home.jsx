@@ -3,6 +3,7 @@ import Product from '../product/Product';
 import './home.css';
 
 function Home() {
+
   return (
     <div className="home">
       <div className="home__container">
